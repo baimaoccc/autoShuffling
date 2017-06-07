@@ -1,0 +1,63 @@
+
+body,ul,li{
+	margin: 0;
+	padding: 0;
+}
+body{
+	background-color: black;
+	color: white;
+	
+}
+.zy-slide{
+	/*两个 section (前一张和后一张) 要做绝对定位*/
+	position: relative;
+	width: 750px;
+	height: 300px;
+	margin: 50px auto;
+	
+}
+.zy-slide .zy-prev,.zy-slide .zy-next{
+	position: absolute;
+	top: 50%;
+	width: 50px;
+	height: 80px;
+	z-index: 100;
+	cursor: pointer;
+	line-height: 80px;
+	margin-top: -40px;
+	/*background-color: red;*/
+	text-align: center;
+}
+.zy-slide .zy-prev{
+	left: 0px;
+}
+.zy-slide .zy-next{
+	right: 0px;
+}
+
+
+.zy-slide ul{
+	/* 让 7个 li 相对父标签做绝对定位*/
+	position: relative;
+	width: 750px;
+	height: 300px;
+	/*background-color: red;*/
+}
+.zy-slide li{
+	list-style: none;
+	width: 150px;
+	height: 200px;
+	position: absolute;
+	border: 2px solid blue;
+	top: 50px;
+	background-color: black;
+}
+.zy-slide li img{
+	width: 100%;
+	height: 100%;
+}
+
+
+
+
+
