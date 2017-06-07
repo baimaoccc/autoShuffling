@@ -133,6 +133,9 @@
 			// 遍历出所有的 轮播图根标签
 			slide(ele,options);
 		})
+		// 返回 元素
+		// 设置支持链式调用
+		return this;
 	}
 	
 })(jQuery)

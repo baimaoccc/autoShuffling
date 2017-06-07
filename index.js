@@ -4,5 +4,8 @@ jQuery.noConflict();
 // $('#a')
 
 jQuery('.slide').zySlide({speed:1000});
-jQuery('#slide').zySlide({delay:2000,speed:2000});
+jQuery('#slide').zySlide({delay:2000,speed:2000}).css({
+	'border': '2px solid red',
+	'backgroundColor': 'green'
+});
 
