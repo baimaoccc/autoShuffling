@@ -2,4 +2,7 @@
 // jQuwey， 只能使用变量 jQuery
 jQuery.noConflict();
 // $('#a')
-jQuery('.zy-slide').zySlide();
+
+jQuery('.slide').zySlide({speed:1000});
+jQuery('#slide').zySlide({delay:2000,speed:2000});
+

@@ -3,9 +3,19 @@
 	// 本函数每次调用只负责一个轮播图的功能
 	// 也就是说只会参数一个轮播图，这个函数的作用域只能
 	// 分配一个轮播图， ele 是某个轮播图的根标签
-	var slide = function(ele) {
+	var slide = function(ele,options) {
 		// 将 ele 转换成 jquery 标签对象
 		var $ele = $(ele);
+		
+		// 默认设置的选项
+		var setting = {
+			// 控制炸开的时间
+			delay: 1000,
+			// 控制轮播图的速度
+			speed: 2000
+		}
+		// 对象合并
+		$.extend(true, setting, options);
 		
 		// 规定好每张图片处于的位置和状态
 		var states = [{
@@ -72,7 +82,7 @@
 			lis.each(function(index, ele) {
 				var state = states[index];
 
-				$(ele).css('z-index', state.ZIndex).finish().animate(state, 1000).find('img').css('opacity', state.ZOpacity);
+				$(ele).css('z-index', state.ZIndex).finish().animate(state, setting.delay).find('img').css('opacity', state.ZOpacity);
 			})
 		}
 		// 让 li 从中间展开
@@ -103,7 +113,7 @@
 		function autoPlay() {
 			interval = setInterval(function() {
 				next();
-			}, 2000);
+			}, setting.speed);
 		}
 		autoPlay();
 
@@ -115,10 +125,13 @@
 		})
 	}
 	// 找到要轮播图的根标签
-	$.fn.zySlide = function(){
+	$.fn.zySlide = function(options){
+		// options 传过来的参数
+		
 		$(this).each(function(i,ele){
+			console.log(options)
 			// 遍历出所有的 轮播图根标签
-			slide(ele);
+			slide(ele,options);
 		})
 	}
 	
